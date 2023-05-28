@@ -1,15 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
-
-patches:
-- path: deployment-patch.yaml
-  target:
-    kind: Deployment
-    name: sample-app
+images:
+- name: ${{ secrets.AWS_REGISTRY_URL }}
+  newName: ${{ secrets.AWS_REGISTRY_URL }}
+  newTag: latest
 resources:
 - ../../base
-images:
-- name: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
-  newName: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
-  newTag: ff7477152f4c5bc9ed6c759ed4bbbe5892829bb9
+patchesStrategicMerge:
+- deployment-patch.yaml

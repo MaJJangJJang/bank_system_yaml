@@ -3,8 +3,11 @@ kind: Deployment
 metadata:
   name: sample-app
 spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sample-app
   template:
-    spec:
-      containers:
-      - name: sample-app
-        image: ${{ secrets.AWS_REGISTRY_URL }}:${{ github.sha }}
+    metadata:
+      labels:
+        app: sample-app
