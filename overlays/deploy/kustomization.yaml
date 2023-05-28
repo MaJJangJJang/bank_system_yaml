@@ -1,11 +1,17 @@
 # apiVersion: kustomize.config.k8s.io/v1beta1
 # kind: Kustomization
 
-bases:
-  - ../../base
 
 patches:
-  - path: deployment-patch.yaml
-    target:
-      kind: Deployment
-      name: sample-app
+- path: deployment-patch.yaml
+  target:
+    kind: Deployment
+    name: sample-app
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- ../../base
+images:
+- name: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
+  newName: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
+  newTag: 726fe923def154e340ab03bb2c28d96e56a5ff8a
