@@ -3,7 +3,7 @@ kind: Kustomization
 images:
 - name: ${{ secrets.AWS_REGISTRY_URL }}
   newName: ${{ secrets.AWS_REGISTRY_URL }}
-  newTag: latest
+  newTag: ${{ github.sha }}
 resources:
 - ../../base
 patchesStrategicMerge:
