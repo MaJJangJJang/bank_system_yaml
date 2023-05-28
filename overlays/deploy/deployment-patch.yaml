@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: sample-app
-          image: ${{ secrets.AWS_REGISTRY_URL }}:${{ github.sha }}
+          image: my-image:new-tag
