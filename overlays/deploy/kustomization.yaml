@@ -4,6 +4,9 @@ images:
 - name: ${{ secrets.AWS_REGISTRY_URL }}
   newName: ${{ secrets.AWS_REGISTRY_URL }}
   newTag: ${{ github.sha }}
+- name: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
+  newName: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
+  newTag: f18b1c7b9ea91c84da2e5fcc4bd00e1184f16d1d
 resources:
 - ../../base
 patchesStrategicMerge:
