@@ -6,7 +6,7 @@ images:
   newTag: ${{ github.sha }}
 - name: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
   newName: 015501295117.dkr.ecr.ap-northeast-1.amazonaws.com/crpyted01-temp
-  newTag: fbcb8555db93161a60d5e344bc56c4240801cc97
+  newTag: 5788c25f05c9faf5d0a5de51950ea571841ee88d
 resources:
 - ../../base
 patchesStrategicMerge:
